@@ -83,8 +83,8 @@ export default function Signup() {
                     <span>or use your account</span>
                     <input type="email" placeholder="Email" ref={signInEmailRef} required />
                     <input type="password" placeholder="Password" ref={signInPasswordRef} />
-                    <a href="#">Forgot your password?</a>
                     <button type="submit" disabled={loading}>Sign In</button>
+                    <a href="#">Forgot your password?</a>
                 </form>
             </div>
             <div className={"overlay-container"}>

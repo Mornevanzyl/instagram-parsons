@@ -87,9 +87,18 @@ a {
 .form-container input {
   background: var(--light-grey);
   border: none;
+  border-radius: 0.5rem;
   padding: 0.7rem;
   margin: 0.5rem 0;
   width: 100%;
+}
+
+.form-container button {
+  margin-top: 0.6rem;
+}
+
+.form-container span {
+  margin-bottom: 0.5rem;
 }
 
 button {
