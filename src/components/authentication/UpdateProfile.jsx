@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { useHistory, Link } from 'react-router-dom';
 
 export default function UpdateProfile() {
@@ -31,7 +31,7 @@ export default function UpdateProfile() {
     }
 
     Promise.all(promises).then(() => {
-      history.push('/');
+      history.push('/user');
     }).catch(() => {
       setError('Failed to update account');
     }).finally(() => {
@@ -41,18 +41,20 @@ export default function UpdateProfile() {
   }
 
   return (
-    <div className={"container"} id="container">
-      <div className={"form-container"}>
-          <form onSubmit={handleUpdate}>
-              <h1>Update Profile</h1>
-              <span className={error ? 'alert' : ''} >{error ? error : `update info for ${currentUser.email} below`}</span>
-              <input type="text" placeholder="Name" ref={nameRef} />
-              <input type="email" placeholder="Email" ref={emailRef} required defaultValue={currentUser.email} />
-              <input type="password" placeholder="Password (leave blank to keep the same)" ref={passwordRef} />
-              <input type="password" placeholder="Confirm Password (blank to keep the same)" ref={passwordConfirmRef} />
-              <button type="submit" disabled={loading}>Update</button>
-              <Link to='/'>Cancel</Link>
-          </form>
+    <div className="container">
+      <div className={"auth-container"} id="container">
+        <div className={"form-container"}>
+            <form onSubmit={handleUpdate}>
+                <h1>Update Profile</h1>
+                <span className={error ? 'alert' : ''} >{error ? error : `update info for ${currentUser.email} below`}</span>
+                <input type="text" placeholder="Name" ref={nameRef} />
+                <input type="email" placeholder="Email" ref={emailRef} required defaultValue={currentUser.email} />
+                <input type="password" placeholder="Password (leave blank to keep the same)" ref={passwordRef} />
+                <input type="password" placeholder="Confirm Password (blank to keep the same)" ref={passwordConfirmRef} />
+                <button type="submit" disabled={loading}>Update</button>
+                <Link to='/user'>Cancel</Link>
+            </form>
+        </div>
       </div>
   </div>
   )

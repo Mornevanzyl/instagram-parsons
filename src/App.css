@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Satisfy&display=swap");
 
 :root {
   --bg-light: #f6f5f7;
@@ -8,6 +8,11 @@
   --btn-primary: #ff4b2b;
   --overlay-dark: #ff4b2b;
   --overlay-light: #ff416c;
+
+  /* Photo Section */
+  --primary: #efb6b2;
+  --secondary: #4e4e4e;
+  --error: #ff4a4a;
 }
 
 * {
@@ -19,12 +24,12 @@
 body {
   font-family: "Montserrat", sans-serif;
   background: var(--bg-light);
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: -1.5rem 0 3rem;
+  margin: -1.5rem 0 3rem; */
 }
 
 p {
@@ -53,7 +58,34 @@ a {
   margin: 1rem 0;
 }
 
+.photo-container {
+  height: 100vh;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  font-family: "Satisfy", cursive;
+}
+
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-container {
   background: white;
   border-radius: 0.6rem;
   box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.25),

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 
 export default function ForgotPassword() {
@@ -23,15 +23,17 @@ export default function ForgotPassword() {
     }
 
     return (
-        <div className={"container"} id="container">
-            <div className={"form-container"}>
-                <form onSubmit={handleSignIn}>
-                    <h1>Reset Password</h1>
-                    <span className={error ? 'alert' : ''} >{error ? error : 'enter your email below'}</span>
-                    <input type="email" placeholder="Email" ref={emailRef} required />
-                    <button type="submit" disabled={loading}>Reset Password</button>
-                    <Link to='/login'>Sign In</Link>
-                </form>
+        <div className="container">
+            <div className={"auth-container"} id="container">
+                <div className={"form-container"}>
+                    <form onSubmit={handleSignIn}>
+                        <h1>Reset Password</h1>
+                        <span className={error ? 'alert' : ''} >{error ? error : 'enter your email below'}</span>
+                        <input type="email" placeholder="Email" ref={emailRef} required />
+                        <button type="submit" disabled={loading}>Reset Password</button>
+                        <Link to='/login'>Sign In</Link>
+                    </form>
+                </div>
             </div>
         </div>
     )
