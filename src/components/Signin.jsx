@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faGooglePlusG, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { useAuth } from '../contexts/AuthContext';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 export default function Signin() {
     const emailRef = useRef();
@@ -40,7 +40,8 @@ export default function Signin() {
                     <input type="email" placeholder="Email" ref={emailRef} required />
                     <input type="password" placeholder="Password" ref={passwordRef} />
                     <button type="submit" disabled={loading}>Sign In</button>
-                    <a href="#">Forgot your password?</a>
+                    <Link to='/forgot-password'>Forgot your password?</Link>
+                    <Link to='/signup'>New here? Join the community</Link>
                 </form>
             </div>
         </div>

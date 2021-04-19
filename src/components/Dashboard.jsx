@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useAuth } from '../contexts/AuthContext'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export default function Dashboard() {
   const [error, setError] = useState('');
@@ -11,16 +11,23 @@ export default function Dashboard() {
     setError('');
     try {
       await logOut();
-      history.pushState('/signup');
+      history.pushState('/');
     } catch {
       setError('Failed to log out');
     }
   }
 
   return (
-    <div>
-      <strong>Email: </strong>{currentUser.email}<br></br>
-      <button onClick={handleLogout}>Log Out</button>
-    </div>
+    <div className={"container"} id="container">
+      <div className={"form-container"}>
+          <div className={"profile-info"}>
+              <h1>User Profile</h1>
+              <span className={error ? 'alert' : ''} >{error ? error : `update info for ${currentUser.email} below`}</span>
+              <strong>Email:</strong> {currentUser.email}
+              <button onClick={handleLogout}>Log Out</button>
+              <Link to='/update-profile'>Update Profile</Link>
+          </div>
+      </div>
+  </div>
   )
 }

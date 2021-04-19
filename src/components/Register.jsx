@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faGooglePlusG, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { useAuth } from '../contexts/AuthContext';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 export default function Register() {
     const nameRef = useRef();
@@ -48,6 +48,7 @@ export default function Register() {
                     <input type="password" placeholder="Password" ref={passwordRef} required />
                     <input type="password" placeholder="Confirm Password" ref={passwordConfirmRef} required />
                     <button type="submit" disabled={loading}>Sign Up</button>
+                    <Link to='/login'>Been here before? Sign in</Link>
                 </form>
             </div>
         </div>
