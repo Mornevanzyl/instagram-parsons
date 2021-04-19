@@ -39,6 +39,13 @@ span {
   font-size: 0.7rem;
 }
 
+span.alert {
+  color: var(--btn-primary);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 a {
   color: var(--dark-grey);
   font-size: 0.8rem;

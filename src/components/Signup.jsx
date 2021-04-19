@@ -63,7 +63,7 @@ export default function Signup() {
                         <a href="#" className={"social"}><FontAwesomeIcon icon={faGooglePlusG} /></a>
                         <a href="#" className={"social"}><FontAwesomeIcon icon={faLinkedinIn} /></a>
                     </div>
-                    <span>or use your email for registration</span>
+                    <span className={error ? 'alert' : ''} >{error ? error : 'or use your email for registration'}</span>
                     <input type="text" placeholder="Name" ref={signUpNameRef} />
                     <input type="email" placeholder="Email" ref={signUpEmailRef} required />
                     <input type="password" placeholder="Password" ref={signUpPasswordRef} required />
@@ -80,7 +80,7 @@ export default function Signup() {
                         <a href="#" className={"social"}><FontAwesomeIcon icon={faGooglePlusG} /></a>
                         <a href="#" className={"social"}><FontAwesomeIcon icon={faLinkedinIn} /></a>
                     </div>
-                    <span>or use your account</span>
+                    <span className={error ? 'alert' : ''} >{error ? error : 'or use your account'}</span>
                     <input type="email" placeholder="Email" ref={signInEmailRef} required />
                     <input type="password" placeholder="Password" ref={signInPasswordRef} />
                     <button type="submit" disabled={loading}>Sign In</button>
